@@ -52,13 +52,7 @@ class Personalinfo extends Dbh  {
             exit();
         }
 
-        if($stmt->rowCount() == 0) {
-            $stmt = null;
-            exit();
-        }
-
         $stmt = null;
-        return true;
     }
 
     protected function updatePersonalinfo($afm, $amka, $idcard, $id) {
@@ -70,13 +64,7 @@ class Personalinfo extends Dbh  {
             exit();
         }
 
-        if($stmt->rowCount() == 0) {
-            $stmt = null;
-            exit();
-        }
-
-        $stmt = null;
-        return true;       
+        $stmt = null;     
     }
 
     protected function deletePersonalinfo($id) {
@@ -87,12 +75,6 @@ class Personalinfo extends Dbh  {
             exit();
         }
 
-        if($stmt->rowCount() == 0) {
-            $stmt = null;
-            exit();
-        }
-
-        $stmt = null;
-        return true;    
+        $stmt = null;   
     }
 }

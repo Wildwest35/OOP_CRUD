@@ -14,28 +14,23 @@ class SignupContr extends Signup {
     }
 
     public function signupUser() {
-        if($this->emptyInput() == false) {
-            // echo "Empty input!";
+        if(!$this->emptyInput($this->uid) || !$this->emptyInput($this->pwd) || !$this->emptyInput($this->pwdrepeat) || !$this->emptyInput($this->email)) {
             header("location: ../index.php?error=emptyinput");
             exit();
         }
-        if($this->invalidUid() == false) {
-            // echo "Invalid username!";
+        if(!$this->invalidUid()) {
             header("location: ../index.php?error=username");
             exit();
         }
-        if($this->invalidEmail() == false) {
-            // echo "Invalid Email!";
+        if(!$this->invalidEmail()) {
             header("location: ../index.php?error=email");
             exit();
         }
-        if($this->pwdMatch() == false) {
-            // echo "Password don't match!";
+        if(!$this->pwdMatch()) {
             header("location: ../index.php?error=passwordmatch");
             exit();
         }
-        if($this->uidTakenCheck() == false) {
-            // echo "Username or email taken!";
+        if(!$this->uidTakenCheck()) {
             header("location: ../index.php?error=useroremailtaken");
             exit();
         }
@@ -43,9 +38,9 @@ class SignupContr extends Signup {
         $this->setUser($this->uid, $this->pwd, $this->email);
     }
 
-    private function emptyInput() {
+    private function emptyInput($val) {
         $result = false;
-        if(empty($this->uid) || empty($this->pwd) || empty($this->pwdrepeat) || empty($this->email)) {
+        if(empty($val) || $val == "") {
             $result = false;
         } else {
             $result = true;

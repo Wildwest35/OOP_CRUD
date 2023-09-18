@@ -6,7 +6,7 @@ $(document).ready(function() {
         var user_id = $(this).attr("value");
         
         $.ajax({
-            url : './includes/readPersonalinfo.php',
+            url : './includes/readPersonalinfo.inc.php',
             type : 'POST',
             dataType: 'json',
             data:{
@@ -33,7 +33,7 @@ $(document).ready(function() {
         var idcard = $("#insidcard").val();
 
         $.ajax({
-            url : './includes/insertPersonalinfo.php',
+            url : './includes/insertPersonalinfo.inc.php',
             type : 'POST',
             dataType: 'json',
             data:{
@@ -59,7 +59,7 @@ $(document).ready(function() {
         var user_id = $(this).attr("value");
 
         $.ajax({
-            url : './includes/readPersonalinfo.php',
+            url : './includes/readPersonalinfo.inc.php',
             type : 'POST',
             dataType: 'json',
             data:{
@@ -89,7 +89,7 @@ $(document).ready(function() {
         var idcard = $("#idcard").val();
 
         $.ajax({
-            url : './includes/updatePersonalinfo.php',
+            url : './includes/updatePersonalinfo.inc.php',
             type : 'POST',
             dataType: 'json',
             data:{
@@ -113,7 +113,7 @@ $(document).ready(function() {
         var user_id = $(this).attr("value");
         
         $.ajax({
-            url : './includes/deletePersonalinfo.php',
+            url : './includes/deletePersonalinfo.inc.php',
             type : 'POST',
             dataType: 'json',
             data:{
@@ -144,7 +144,7 @@ $(document).ready(function() {
 
     function fetch(data) {
         $.ajax({
-            url : './includes/table.php',
+            url : './includes/table.inc.php',
             type : 'POST',
             data: data,
             success : function (data) {

@@ -6,9 +6,9 @@ if(isset($_POST['submit'])) {
     $pwd = $_POST['pwd'];
 
     // Instantiate SignupContr class
-    require_once "../classes/Dbh.classes.php";
-    require_once "../classes/login.classes.php";
-    require_once "../classes/login-contr.classes.php";
+    require_once "../classes/dbh.class.php";
+    require_once "../classes/login.class.php";
+    require_once "../classes/loginContr.class.php";
     $login = new LoginContr($uid, $pwd);
     // Running error handlers and user signup
     $login->loginUser();

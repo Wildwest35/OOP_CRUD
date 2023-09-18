@@ -1,5 +1,4 @@
 <?php
-
 class PersonalinfoContr extends Personalinfo  {
     private $afm;
     private $amka;
@@ -98,8 +97,7 @@ class PersonalinfoContr extends Personalinfo  {
             exit();
         }
 
-        $data = $this->insertPersonalinfo($afm, $amka, $idcard, $user_id);
-        return $data;
+        $this->insertPersonalinfo($afm, $amka, $idcard, $user_id);
     }
 
     public function updateinfo($afm, $amka, $idcard, $id) {
@@ -115,8 +113,7 @@ class PersonalinfoContr extends Personalinfo  {
             exit();
         }
 
-        $data = $this->updatePersonalinfo($afm, $amka, $idcard, $id);
-        return $data;
+        $this->updatePersonalinfo($afm, $amka, $idcard, $id);
     }
 
     public function deleteinfo($id) {
@@ -124,7 +121,6 @@ class PersonalinfoContr extends Personalinfo  {
             exit();
         }
 
-        $data = $this->deletePersonalinfo($id);
-        return $data;
+        $this->deletePersonalinfo($id);
     }
 }

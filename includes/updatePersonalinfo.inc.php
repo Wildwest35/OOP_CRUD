@@ -6,9 +6,9 @@
         $amka = $_POST['amka'];
         $idcard = $_POST['idcard'];
 
-        require_once "../classes/Dbh.classes.php";
-        require_once "../classes/personalinfo.classes.php";
-        require_once "../classes/personalinfo-contr.classes.php";
+        require_once "../classes/dbh.class.php";
+        require_once "../classes/personalinfo.class.php";
+        require_once "../classes/personalinfoContr.class.php";
         $personalinfo = new PersonalinfoContr($afm, $amka, $idcard);
 
         $data = $personalinfo->updateinfo($afm, $amka, $idcard, $user_id);
